@@ -1,0 +1,21 @@
+﻿<h1>
+    Información Vista Controlador GET
+</h1>
+
+<a asp-controller="Informacion"
+   asp-action="VistaGet"
+   asp-route-version="5"
+   asp-route-aplicacion="Mvc Net Core">
+    Datos 1
+</a>
+
+<a asp-controller="Informacion"
+   asp-action="VistaGet"
+   asp-route-version="6"
+   asp-route-aplicacion="Net Core 2022">
+    Datos 2
+</a>
+
+<h1 style="color:green">
+    Aplicación: @ViewData["Aplicacion"], Versión: @ViewData["Version"]
+</h1>
