@@ -1,0 +1,25 @@
+﻿@model List<ElementoTabla>
+
+<h1>Tabla Multiplicar Objetos</h1>
+
+<form method="post">
+    <label>Introduzca un número </label>
+    <input type="number" class="form-control"
+           name="numero"/>
+    <button type="submit" class="btn btn-danger">
+        Tabla Multiplicar
+    </button>
+</form>
+
+@if (Model != null)
+{
+    <table class="table table-bordered">
+        @foreach (ElementoTabla elemento in Model)
+        {
+            <tr>
+                <td>@elemento.Operacion</td>
+                <td>@elemento.Resultado</td>
+            </tr>
+        }
+    </table>
+}

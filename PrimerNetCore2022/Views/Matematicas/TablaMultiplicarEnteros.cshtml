@@ -1,0 +1,23 @@
+﻿@model List<int>
+
+<h1>
+    Tabla Multiplicar Enteros
+</h1>
+<form method="post">
+    <label>Introduzca un número: </label>
+    <input type="number" class="form-control"
+           name="numero"/>
+    <button type="submit" class="btn btn-warning">
+        Tabla Multiplicar
+    </button>
+</form>
+
+@if (Model != null)
+{
+    <ul>
+        @foreach (int numero in Model)
+        {
+            <li>@numero</li>
+        }
+    </ul>
+}
