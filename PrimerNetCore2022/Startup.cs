@@ -30,7 +30,14 @@ namespace PrimerNetCore2022
             //Genera un objeto por cada petición
             //services.AddTransient<Coche>();
             //services.AddSingleton<Deportivo>();
-            services.AddSingleton<ICoche, Deportivo>();
+            //services.AddSingleton<ICoche, Deportivo>();
+            Deportivo deportivo = new Deportivo();
+            deportivo.Marca = "DMG";
+            deportivo.Modelo = "DELOREAN";
+            deportivo.Imagen = "delorean.jpg";
+            deportivo.Velocidad = 0;
+            deportivo.VelocidadMaxima = 500;
+            services.AddSingleton<ICoche>(z => deportivo);
             services.AddControllersWithViews();
         }
 
