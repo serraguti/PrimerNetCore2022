@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PrimerNetCore2022.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,16 @@ namespace PrimerNetCore2022
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //RESOLVER LAS DEPENDENCIAS SE UTILIZA EL METODO AddTransient/AddSingleton
+            //Singleton crea solamente UNA instancia para toda la aplicación 
+            //en la inyección de dependencias, es decir, solamente tenemos un objeto
+            //services.AddSingleton<Coche>();
+            //Genera un objeto por cada petición
+            //services.AddTransient<Coche>();
+            //services.AddSingleton<Deportivo>();
+            services.AddSingleton<ICoche, Deportivo>();
             services.AddControllersWithViews();
         }
 

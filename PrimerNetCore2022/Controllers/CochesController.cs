@@ -10,12 +10,12 @@ namespace PrimerNetCore2022.Controllers
     public class CochesController : Controller
     {
         //ESTA CLASE UTILIZAR OBJETOS DE TIPO COCHE
-        private Coche car;
+        private ICoche car;
 
         //POR AHORA, NO VOY A UTILIZAR DI
-        public CochesController()
+        public CochesController(ICoche car)
         {
-            this.car = new Coche();
+            this.car = car;
         }
 
         public IActionResult Index()

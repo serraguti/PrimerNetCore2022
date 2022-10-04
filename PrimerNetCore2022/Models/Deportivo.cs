@@ -5,27 +5,28 @@ using System.Threading.Tasks;
 
 namespace PrimerNetCore2022.Models
 {
-    public class Coche: ICoche
+    //UN DEPORTIVO ES UNA INTERFACE ICOCHE
+    public class Deportivo: ICoche
     {
+        public Deportivo()
+        {
+            this.Marca = "Ferrari";
+            this.Modelo = "Testarrossa";
+            this.Imagen = "ferrari.jpg";
+            this.Velocidad = 0;
+            this.VelocidadMaxima = 320;
+        }
+
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Imagen { get; set; }
         public int Velocidad { get; set; }
         public int VelocidadMaxima { get; set; }
-        public Coche()
-        {
-            this.Marca = "BatMovil";
-            this.Modelo = "Antiguo";
-            this.Imagen = "batmovil.jpg";
-            this.Velocidad = 0;
-            this.VelocidadMaxima = 120;
-        }
 
         public int Acelerar()
         {
-            this.Velocidad += 20;
-            if (this.Velocidad >= this.VelocidadMaxima)
-            {
+            this.Velocidad += 40;
+            if (this.Velocidad >= this.VelocidadMaxima) {
                 this.Velocidad = this.VelocidadMaxima;
             }
             return this.Velocidad;
@@ -33,7 +34,7 @@ namespace PrimerNetCore2022.Models
 
         public int Frenar()
         {
-            this.Velocidad -= 20;
+            this.Velocidad -= 40;
             if (this.Velocidad < 0)
             {
                 this.Velocidad = 0;
